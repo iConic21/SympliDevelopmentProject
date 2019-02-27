@@ -25,8 +25,15 @@ namespace SympliDevelopmentProject.Services.Engine
 
         public virtual async Task<string> GetPage(string url)
         {
-            var result = await RequestHelper.HttpClient.GetAsync(url);
-            return await result.Content.ReadAsStringAsync();
+            try
+            {
+                var result = await RequestHelper.HttpClient.GetAsync(url);
+                return await result.Content.ReadAsStringAsync();
+            } catch
+            {
+                // TO-DO log using log4net
+                return string.Empty;
+            }
         }
 
         public virtual async Task<string> Search(string keywords, string phrase)
