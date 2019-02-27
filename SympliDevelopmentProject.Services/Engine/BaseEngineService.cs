@@ -1,4 +1,5 @@
-﻿using SympliDevelopmentProject.Services.Cache;
+﻿using SympliDevelopmentProject.Common.Helpers;
+using SympliDevelopmentProject.Services.Cache;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text.RegularExpressions;
@@ -10,30 +11,21 @@ namespace SympliDevelopmentProject.Services.Engine
     {
         private readonly ICacheService _cacheService;
 
-        protected readonly string ValueGroupName = "cite";
+        protected readonly string ValueGroupName;
         protected readonly string SearchUrlFormat;
-        protected readonly string RegixSearchString = "<cite(.*?)>(.*?)(?'{0}'({1}))(.*?)<";
-        private readonly HttpClient _httpClient;
+        protected readonly string RegixSearchString;
 
-        public BaseEngineService(ICacheService cacheService, string searchUrlFormat)
-        {
-            _cacheService = cacheService;
-            SearchUrlFormat = searchUrlFormat;
-            _httpClient = new HttpClient();
-        }
-
-        public BaseEngineService(ICacheService cacheService, string searchUrlFormat, string valueGroupName, string regixSearchString)
+        protected BaseEngineService(ICacheService cacheService, string valueGroupName, string searchUrlFormat, string regixSearchString)
         {
             _cacheService = cacheService;
             ValueGroupName = valueGroupName;
             SearchUrlFormat = searchUrlFormat;
             RegixSearchString = regixSearchString;
-            _httpClient = new HttpClient();
         }
 
         public virtual async Task<string> GetPage(string url)
         {
-            var result = await _httpClient.GetAsync(url);
+            var result = await RequestHelper.HttpClient.GetAsync(url);
             return await result.Content.ReadAsStringAsync();
         }
 
