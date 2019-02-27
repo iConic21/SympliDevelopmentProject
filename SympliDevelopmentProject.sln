@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SympliDevelopmentProject.Web", "SympliDevelopmentProject.Web\SympliDevelopmentProject.Web.csproj", "{3BA4DBAA-54B0-4A05-B831-14E60BEA92D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SympliDevelopmentProject.Services", "SympliDevelopmentProject.Services\SympliDevelopmentProject.Services.csproj", "{02F0255E-687E-4557-A160-5C41BBFC2A16}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3BA4DBAA-54B0-4A05-B831-14E60BEA92D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BA4DBAA-54B0-4A05-B831-14E60BEA92D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BA4DBAA-54B0-4A05-B831-14E60BEA92D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BA4DBAA-54B0-4A05-B831-14E60BEA92D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02F0255E-687E-4557-A160-5C41BBFC2A16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02F0255E-687E-4557-A160-5C41BBFC2A16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02F0255E-687E-4557-A160-5C41BBFC2A16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02F0255E-687E-4557-A160-5C41BBFC2A16}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {64C2FC77-1505-4258-83D5-BDABCB3AAA39}
+	EndGlobalSection
+EndGlobal

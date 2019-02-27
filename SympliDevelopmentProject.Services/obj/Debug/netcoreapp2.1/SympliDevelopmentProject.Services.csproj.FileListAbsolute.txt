@@ -1,0 +1,9 @@
+C:\Users\iConic\source\repos\SympliDevelopmentProject\SympliDevelopmentProject.Services\bin\Debug\netcoreapp2.1\SympliDevelopmentProject.Services.deps.json
+C:\Users\iConic\source\repos\SympliDevelopmentProject\SympliDevelopmentProject.Services\bin\Debug\netcoreapp2.1\SympliDevelopmentProject.Services.dll
+C:\Users\iConic\source\repos\SympliDevelopmentProject\SympliDevelopmentProject.Services\bin\Debug\netcoreapp2.1\SympliDevelopmentProject.Services.pdb
+C:\Users\iConic\source\repos\SympliDevelopmentProject\SympliDevelopmentProject.Services\obj\Debug\netcoreapp2.1\SympliDevelopmentProject.Services.csprojAssemblyReference.cache
+C:\Users\iConic\source\repos\SympliDevelopmentProject\SympliDevelopmentProject.Services\obj\Debug\netcoreapp2.1\SympliDevelopmentProject.Services.csproj.CoreCompileInputs.cache
+C:\Users\iConic\source\repos\SympliDevelopmentProject\SympliDevelopmentProject.Services\obj\Debug\netcoreapp2.1\SympliDevelopmentProject.Services.AssemblyInfoInputs.cache
+C:\Users\iConic\source\repos\SympliDevelopmentProject\SympliDevelopmentProject.Services\obj\Debug\netcoreapp2.1\SympliDevelopmentProject.Services.AssemblyInfo.cs
+C:\Users\iConic\source\repos\SympliDevelopmentProject\SympliDevelopmentProject.Services\obj\Debug\netcoreapp2.1\SympliDevelopmentProject.Services.dll
+C:\Users\iConic\source\repos\SympliDevelopmentProject\SympliDevelopmentProject.Services\obj\Debug\netcoreapp2.1\SympliDevelopmentProject.Services.pdb
