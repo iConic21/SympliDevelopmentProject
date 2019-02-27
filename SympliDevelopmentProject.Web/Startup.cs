@@ -28,7 +28,7 @@ namespace SympliDevelopmentProject
 
             services.AddSingleton<ICacheService, CacheService>();
             services.AddScoped<ISearchService, SearchService>();
-            services.AddScoped<IGoogleService, GoogleService>();
+            services.AddScoped<GoogleService>();
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {

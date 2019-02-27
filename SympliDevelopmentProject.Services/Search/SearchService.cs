@@ -5,9 +5,9 @@ namespace SympliDevelopmentProject.Services.Search
 {
     public class SearchService : ISearchService
     {
-        private readonly IGoogleService _googleService;
+        private readonly GoogleService _googleService;
 
-        public SearchService(IGoogleService googleService)
+        public SearchService(GoogleService googleService)
         {
             _googleService = googleService;
         }

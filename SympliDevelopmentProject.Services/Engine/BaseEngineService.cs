@@ -10,6 +10,10 @@ namespace SympliDevelopmentProject.Services.Engine
     {
         private readonly ICacheService _cacheService;
 
+        protected string ValueGroupName { get; set; }
+        protected string SearchUrlFormat { get; set; }
+        protected string RegixSearchString { get; set; }
+
         public BaseEngineService(ICacheService cacheService)
         {
             _cacheService = cacheService;
@@ -22,9 +26,9 @@ namespace SympliDevelopmentProject.Services.Engine
             return await result.Content.ReadAsStringAsync();
         }
 
-        public virtual async Task<string> Search(string regexString, string keywords)
+        public virtual async Task<string> Search(string keywords, string phrase)
         {
-            Regex htmlRegexExpression = new Regex(regexString, RegexOptions.IgnoreCase | RegexOptions.Compiled);
+            Regex htmlRegexExpression = new Regex(string.Format(RegixSearchString, ValueGroupName, phrase), RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
             var keywordsList = keywords.Split(',');
             var tasks = new List<Task<int>>();
@@ -39,20 +43,18 @@ namespace SympliDevelopmentProject.Services.Engine
 
         public virtual async Task<int> GetCount(Regex htmlRegexExpression, string keyword)
         {
-            var cacheKey = GetCacheKey($"{htmlRegexExpression}{keyword}");
+            var cacheKey = $"{SearchUrlFormat}{htmlRegexExpression}{keyword}";
             var cache = _cacheService.Get<int?>(cacheKey);
             if (cache.HasValue)
             {
                 return cache.Value;
             }
 
-            var html = await GetPage(keyword);
+            var html = await GetPage(string.Format(SearchUrlFormat, keyword));
             var matches = htmlRegexExpression.Matches(html);
             var count = matches.Count;
             _cacheService.Set(cacheKey, count);
             return count;
         }
-
-        internal abstract string GetCacheKey(string value);
     }
 }
