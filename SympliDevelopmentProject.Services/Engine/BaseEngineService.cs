@@ -10,19 +10,23 @@ namespace SympliDevelopmentProject.Services.Engine
     {
         private readonly ICacheService _cacheService;
 
-        protected string ValueGroupName { get; set; }
-        protected string SearchUrlFormat { get; set; }
-        protected string RegixSearchString { get; set; }
+        protected readonly string ValueGroupName;
+        protected readonly string SearchUrlFormat;
+        protected readonly string RegixSearchString;
+        private readonly HttpClient _httpClient;
 
-        public BaseEngineService(ICacheService cacheService)
+        public BaseEngineService(ICacheService cacheService, string valueGroupName, string searchUrlFormat, string regixSearchString)
         {
             _cacheService = cacheService;
+            ValueGroupName = valueGroupName;
+            SearchUrlFormat = searchUrlFormat;
+            RegixSearchString = regixSearchString;
+            _httpClient = new HttpClient();
         }
 
         public virtual async Task<string> GetPage(string url)
         {
-            var client = new HttpClient();
-            var result = await client.GetAsync(url);
+            var result = await _httpClient.GetAsync(url);
             return await result.Content.ReadAsStringAsync();
         }
 
