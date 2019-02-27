@@ -1,26 +1,66 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
+import Input from './Input';
 
-export class Home extends Component {
-  displayName = Home.name
+import './styles.css';
 
-  render() {
-    return (
-      <div>
-        <h1>Hello, world!</h1>
-        <p>Welcome to your new single-page application, built with:</p>
-        <ul>
-          <li><a href='https://get.asp.net/'>ASP.NET Core</a> and <a href='https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx'>C#</a> for cross-platform server-side code</li>
-          <li><a href='https://facebook.github.io/react/'>React</a> for client-side code</li>
-          <li><a href='http://getbootstrap.com/'>Bootstrap</a> for layout and styling</li>
-        </ul>
-        <p>To help you get started, we've also set up:</p>
-        <ul>
-          <li><strong>Client-side navigation</strong>. For example, click <em>Counter</em> then <em>Back</em> to return here.</li>
-          <li><strong>Development server integration</strong>. In development mode, the development server from <code>create-react-app</code> runs in the background automatically, so your client-side resources are dynamically built on demand and the page refreshes when you modify any file.</li>
-          <li><strong>Efficient production builds</strong>. In production mode, development-time features are disabled, and your <code>dotnet publish</code> configuration produces minified, efficiently bundled JavaScript files.</li>
-        </ul>
-        <p>The <code>ClientApp</code> subdirectory is a standard React application based on the <code>create-react-app</code> template. If you open a command prompt in that directory, you can run <code>npm</code> commands such as <code>npm test</code> or <code>npm install</code>.</p>
-      </div>
-    );
-  }
+class Home extends PureComponent {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            engine: 0,
+            keywords: '',
+            url: '',
+            results: '',
+            loading: false
+        }
+    }
+
+    render() {
+        return (
+            <div className='home'>
+                <form className='home__form' onSubmit={this.handleFormSubmit} >
+                    <div className='home__form__label'>Sympli Development Project</div>
+                    <Input disabled={this.state.loading} label='Search Engine' type='select' options={['Google', 'Bing']} onChange={this.handleOnChange.bind(this, 'engine')} />
+                    <Input disabled={this.state.loading} label='Keywords' type='text' onBlur={this.handleOnChange.bind(this, 'keywords')} />
+                    <Input disabled={this.state.loading} label='URL' type='text' onBlur={this.handleOnChange.bind(this, 'url')} />
+                    {
+                        this.state.results && <div className='home__form__results'>Results: {this.state.results}</div>
+                    }
+                    <button disabled={this.state.loading} className='home__form__search' type='submit'>Search</button>
+                </form>
+            </div>
+        );
+    }
+
+    handleFormSubmit = e => {
+        e.preventDefault();
+        if (!this.state.keywords || !this.state.url) {
+            return;
+        }
+
+        this.setState({
+            loading: true
+        });
+
+        fetch(`/api/search?searchEngine=${this.state.engine}&keywords=${this.state.keywords}&searchPhrase=${this.state.url}`)
+        .then(response => response.text())
+        .then(data => {
+            this.setState({ 
+                results: data,
+                loading: false
+            });
+        });
+    }
+
+    handleOnChange = (stateName, event) => {
+        this.setState({
+            [stateName]: event.target.value
+        })
+    }
 }
+
+export default Home;
+
+
+

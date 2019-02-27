@@ -1,7 +1,6 @@
-﻿using SympliDevelopmentProject.Common.Helpers;
+﻿using SympliDevelopmentProject.Common;
 using SympliDevelopmentProject.Services.Cache;
 using System.Collections.Generic;
-using System.Net.Http;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
@@ -27,7 +26,7 @@ namespace SympliDevelopmentProject.Services.Engine
         {
             try
             {
-                var result = await RequestHelper.HttpClient.GetAsync(url);
+                var result = await Helpers.HttpClient.GetAsync(url);
                 return await result.Content.ReadAsStringAsync();
             } catch
             {
