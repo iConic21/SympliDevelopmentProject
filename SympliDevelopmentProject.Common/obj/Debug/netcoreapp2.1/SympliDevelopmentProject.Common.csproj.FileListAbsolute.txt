@@ -1,0 +1,8 @@
+C:\Users\iConic\source\repos\SympliDevelopmentProject\SympliDevelopmentProject.Common\bin\Debug\netcoreapp2.1\SympliDevelopmentProject.Common.deps.json
+C:\Users\iConic\source\repos\SympliDevelopmentProject\SympliDevelopmentProject.Common\bin\Debug\netcoreapp2.1\SympliDevelopmentProject.Common.dll
+C:\Users\iConic\source\repos\SympliDevelopmentProject\SympliDevelopmentProject.Common\bin\Debug\netcoreapp2.1\SympliDevelopmentProject.Common.pdb
+C:\Users\iConic\source\repos\SympliDevelopmentProject\SympliDevelopmentProject.Common\obj\Debug\netcoreapp2.1\SympliDevelopmentProject.Common.csproj.CoreCompileInputs.cache
+C:\Users\iConic\source\repos\SympliDevelopmentProject\SympliDevelopmentProject.Common\obj\Debug\netcoreapp2.1\SympliDevelopmentProject.Common.AssemblyInfoInputs.cache
+C:\Users\iConic\source\repos\SympliDevelopmentProject\SympliDevelopmentProject.Common\obj\Debug\netcoreapp2.1\SympliDevelopmentProject.Common.AssemblyInfo.cs
+C:\Users\iConic\source\repos\SympliDevelopmentProject\SympliDevelopmentProject.Common\obj\Debug\netcoreapp2.1\SympliDevelopmentProject.Common.dll
+C:\Users\iConic\source\repos\SympliDevelopmentProject\SympliDevelopmentProject.Common\obj\Debug\netcoreapp2.1\SympliDevelopmentProject.Common.pdb

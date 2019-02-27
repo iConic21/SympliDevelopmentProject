@@ -8,4 +8,8 @@
     <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="2.1.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SympliDevelopmentProject.Common\SympliDevelopmentProject.Common.csproj" />
+  </ItemGroup>
+
 </Project>

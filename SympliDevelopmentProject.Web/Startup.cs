@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SympliDevelopmentProject.Services.Bing;
 using SympliDevelopmentProject.Services.Cache;
 using SympliDevelopmentProject.Services.Engine;
 using SympliDevelopmentProject.Services.Google;
@@ -29,6 +30,7 @@ namespace SympliDevelopmentProject
             services.AddSingleton<ICacheService, CacheService>();
             services.AddScoped<ISearchService, SearchService>();
             services.AddScoped<GoogleService>();
+            services.AddScoped<BingService>();
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {

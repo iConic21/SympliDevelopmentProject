@@ -10,12 +10,19 @@ namespace SympliDevelopmentProject.Services.Engine
     {
         private readonly ICacheService _cacheService;
 
-        protected readonly string ValueGroupName;
+        protected readonly string ValueGroupName = "cite";
         protected readonly string SearchUrlFormat;
-        protected readonly string RegixSearchString;
+        protected readonly string RegixSearchString = "<cite(.*?)>(.*?)(?'{0}'({1}))(.*?)<";
         private readonly HttpClient _httpClient;
 
-        public BaseEngineService(ICacheService cacheService, string valueGroupName, string searchUrlFormat, string regixSearchString)
+        public BaseEngineService(ICacheService cacheService, string searchUrlFormat)
+        {
+            _cacheService = cacheService;
+            SearchUrlFormat = searchUrlFormat;
+            _httpClient = new HttpClient();
+        }
+
+        public BaseEngineService(ICacheService cacheService, string searchUrlFormat, string valueGroupName, string regixSearchString)
         {
             _cacheService = cacheService;
             ValueGroupName = valueGroupName;
